@@ -49,7 +49,7 @@ InvestEd/
     ├── basics.html     # Educational Content
     ├── calculator.html # Freedom Calculator UI
     └── compare.html    # Investment Comparison UI
-
+```
 ---
 ## 🚀 Quick Start
 

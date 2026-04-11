@@ -1,0 +1,1012 @@
+/* ========================================
+   INVESTED APP - MAIN STYLESHEET
+   ======================================== */
+
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+    --bg-dark: #0a0a0f;
+    --bg-card: #12121a;
+    --bg-elevated: #1a1a24;
+    --border: #2a2a35;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --text-muted: #6b6b7a;
+    --accent: #10b981;
+    --accent-blue: #3b82f6;
+    --accent-orange: #f59e0b;
+    --accent-red: #ef4444;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+}
+
+/* ---------- GLOBAL RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* ---------- NAVIGATION ---------- */
+.navbar {
+    border-bottom: 1px solid var(--border);
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(135deg, #10b981, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+}
+
+.btn-secondary {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-card);
+}
+
+/* ---------- HERO SECTION (Homepage) ---------- */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #10b981, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---------- FEATURES GRID (Homepage) ---------- */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.feature-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ---------- PREVIEW SECTION (Homepage) ---------- */
+.preview {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.preview h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.preview-item {
+    text-align: center;
+}
+
+.preview-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    opacity: 0.5;
+}
+
+.preview-item h4 {
+    margin: 0.5rem 0;
+}
+
+.preview-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ---------- PAGE HEADERS (Calculator, Compare, Basics) ---------- */
+.calculator-main,
+.basics-main,
+.compare-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.calc-header,
+.basics-header,
+.compare-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.calc-header h1,
+.basics-header h1,
+.compare-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.calc-header p,
+.basics-header p,
+.compare-header p {
+    color: var(--text-secondary);
+}
+
+/* ---------- LAYOUTS ---------- */
+.calculator-layout,
+.compare-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 900px) {
+
+    .calculator-layout,
+    .compare-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- INPUT PANELS ---------- */
+.input-panel,
+.compare-inputs {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.input-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.input-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+/* ---------- RANGE SLIDERS ---------- */
+input[type="range"] {
+    width: 100%;
+    height: 4px;
+    -webkit-appearance: none;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ---------- SCENARIO BUTTONS ---------- */
+.scenarios {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.scenarios label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.scenario-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.scenario-btn {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.scenario-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* ---------- RESULTS PANELS ---------- */
+.results-panel,
+.compare-results {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+/* ---------- GROWTH RATE CARDS ---------- */
+.growth-rates {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.rate-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    border-left: 3px solid;
+    transition: transform 0.2s;
+}
+
+.rate-card:hover {
+    transform: translateX(4px);
+}
+
+.rate-icon {
+    font-size: 1.75rem;
+}
+
+.rate-info {
+    flex: 1;
+}
+
+.rate-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.rate-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.rate-detail {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.rate-stats {
+    text-align: right;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.rate-stats div:first-child {
+    color: var(--accent);
+}
+
+.rate-stats div:last-child {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* ---------- CHART CONTAINERS ---------- */
+.chart-container,
+.compare-chart-container {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+#growth-chart,
+#compare-chart {
+    max-height: 500px !important;
+    height: 500px !important;
+    width: 100%;
+}
+
+/* ======================================== */
+/* BASICS PAGE - LARGE CHARTS */
+/* ======================================== */
+
+/* RULE OF 72 BARS - MUCH LARGER */
+.rule-of-72-wrapper {
+    margin-top: 1rem;
+    background: var(--bg-dark);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.rule-of-72-bars-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 280px !important;
+    margin: 1.5rem 0;
+}
+
+.rule-of-72-bar-item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rule-of-72-bar {
+    width: 100%;
+    max-width: 80px;
+    background: linear-gradient(180deg, #60a5fa, #3b82f6);
+    border-radius: 12px 12px 4px 4px;
+    transition: height 0.3s;
+    min-height: 8px;
+}
+
+.rule-of-72-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+.rule-of-72-value {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* Target the existing Rule of 72 div and make it taller */
+.lesson-card > div:has(> div[style*="display: flex"][style*="gap: 0.5rem"]) {
+    padding: 1.5rem !important;
+}
+
+.lesson-card div[style*="display: flex"][style*="gap: 0.5rem"][style*="align-items: end"] {
+    height: 280px !important;
+    margin: 1.5rem 0 !important;
+    gap: 1.5rem !important;
+}
+
+.lesson-card div[style*="display: flex"][style*="gap: 0.5rem"][style*="align-items: end"] > div {
+    min-width: 70px !important;
+}
+
+.lesson-card div[style*="display: flex"][style*="gap: 0.5rem"][style*="align-items: end"] > div > div {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.lesson-card div[style*="display: flex"][style*="gap: 0.5rem"][style*="align-items: end"] > div > span {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    margin-top: 12px !important;
+    display: block !important;
+}
+
+/* RISK VS REWARD SVG CHART - MUCH LARGER */
+.risk-chart-wrapper {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--bg-dark);
+    border-radius: 16px;
+}
+
+.lesson-card svg {
+    width: 100% !important;
+    height: 240px !important;
+    margin: 1rem 0;
+}
+
+.lesson-card svg text {
+    font-size: 11px !important;
+    font-weight: 500 !important;
+}
+
+.lesson-card svg line {
+    stroke-width: 2px !important;
+}
+
+.lesson-card svg path {
+    stroke-width: 4px !important;
+}
+
+/* COMPOUND INTEREST CHART - LARGER */
+.basics-main canvas {
+    max-height: 400px !important;
+    height: 400px !important;
+    width: 100%;
+}
+
+.lesson-card canvas {
+    min-height: 320px;
+    margin: 1rem 0;
+}
+
+/* Demo result area styling */
+.demo-result {
+    background: var(--bg-dark);
+    padding: 1.25rem;
+    border-radius: 16px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.demo-result div:first-child {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.demo-result div:nth-child(2) {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.demo-control label {
+    font-size: 0.9rem;
+}
+
+/* ---------- CHART HEADER ---------- */
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.chart-header h3 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    transition: background 0.2s;
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+}
+
+.legend-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.legend-item.muted {
+    opacity: 0.4;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.chart-insight {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: var(--radius-sm);
+}
+
+/* ---------- TABLES ---------- */
+.milestone-table,
+.compare-table-container {
+    margin-top: 1rem;
+}
+
+.milestone-table h3,
+.compare-table-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 0.75rem 0.5rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table td {
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.rate-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.risk-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.risk-badge.very-low,
+.risk-badge.low {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+}
+
+.risk-badge.medium,
+.risk-badge.low-medium {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+}
+
+.risk-badge.high,
+.risk-badge.med-high {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+}
+
+.risk-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.freedom-year {
+    font-weight: 700;
+}
+
+.table-summary {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.summary-stat {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.summary-stat strong {
+    color: var(--text-primary);
+}
+
+/* ---------- EDUCATIONAL NOTE ---------- */
+.educational-note {
+    margin-top: 2rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.note-icon {
+    font-size: 1.5rem;
+}
+
+.note-content {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.note-content strong {
+    color: var(--accent);
+}
+
+/* ---------- BASICS PAGE SPECIFIC ---------- */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    gap: 2rem;
+}
+
+.lesson-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+}
+
+.lesson-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.lesson-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.lesson-quote {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent);
+}
+
+.example-box {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin: 1rem 0;
+}
+
+.example-title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.example-box ul {
+    margin: 0.5rem 0 0 1.5rem;
+    color: var(--text-secondary);
+}
+
+.example-note {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+}
+
+.simple-explanation {
+    background: rgba(16, 185, 129, 0.08);
+    border-left: 4px solid var(--accent);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.75rem 0;
+    font-size: 0.95rem;
+}
+
+.play-hint {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 0.75rem;
+    color: var(--text-muted);
+}
+
+.interactive-demo {
+    transition: all 0.2s;
+}
+
+.interactive-demo:hover {
+    border-color: var(--accent);
+}
+
+.demo-control {
+    margin-bottom: 1rem;
+}
+
+.demo-breakdown {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.comparison-table {
+    margin-top: 1rem;
+}
+
+.comparison-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.risk-scale {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.risk-level {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.risk-level.low {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.risk-level.medium {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.risk-level.high {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.risk-level span {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.risk-level p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.formula-box {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.formula {
+    font-family: monospace;
+    font-size: 1rem;
+    background: var(--bg-dark);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.75rem;
+}
+
+.formula-result {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+.milestones ul {
+    margin: 0.5rem 0 0 1.5rem;
+}
+
+.milestones li {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.milestones li span {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.next-steps {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+}
+
+/* ---------- COMPARE PAGE INSIGHTS ---------- */
+.compare-insights {
+    margin-top: 1.5rem;
+}
+
+.insight-card {
+    display: flex;
+    gap: 1rem;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+}
+
+.insight-card:hover {
+    transform: translateX(8px);
+    background: var(--bg-card);
+}
+
+.insight-icon {
+    font-size: 1.5rem;
+}
+
+.insight-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.insight-text strong {
+    color: var(--accent);
+}
+
+/* ---------- VISUAL TIMELINE ---------- */
+.visual-timeline {
+    background: linear-gradient(135deg, var(--bg-elevated), #0f0f18);
+}
+
+/* ---------- GROWTH COMPARISON BARS ---------- */
+.growth-comparison {
+    background: linear-gradient(135deg, var(--bg-elevated), #0f0f18);
+}

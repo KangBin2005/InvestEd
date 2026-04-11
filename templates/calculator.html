@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestEd • Freedom Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">📈 InvestEd</a>
+            <div class="nav-links">
+                <a href="/basics" class="nav-link">📚 Basics</a>
+                <a href="/calculator" class="nav-link active">🧮 Calculator</a>
+                <a href="/compare" class="nav-link">⚖️ Compare</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="calculator-main">
+        <div class="calc-header">
+            <h1>🧮 Watch Your Money Grow</h1>
+            <p>See how different investments grow over time — the power of compound interest in action</p>
+        </div>
+
+        <div class="calculator-layout">
+            <div class="input-panel">
+                <div class="input-group">
+                    <label>💰 Starting Savings</label>
+                    <div class="input-value" id="start-val">$5,000</div>
+                    <input type="range" id="start-amount" min="0" max="200000" step="1000" value="5000">
+                    <div class="input-hint">What you have saved today</div>
+                </div>
+
+                <div class="input-group">
+                    <label>📆 Monthly Investment</label>
+                    <div class="input-value" id="monthly-val">$500</div>
+                    <input type="range" id="monthly-invest" min="0" max="10000" step="50" value="500">
+                    <div class="input-hint">How much you add each month</div>
+                </div>
+
+                <div class="input-group">
+                    <label>🎯 Desired Yearly Income (Freedom Goal)</label>
+                    <div class="input-value" id="income-val">$50,000</div>
+                    <input type="range" id="income-goal" min="20000" max="200000" step="1000" value="50000">
+                    <div class="input-hint">The annual income you want from investments</div>
+                </div>
+
+                <div class="input-group">
+                    <label>⏱️ Time Horizon</label>
+                    <div class="input-value" id="years-val">30 years</div>
+                    <input type="range" id="time-horizon" min="5" max="50" step="1" value="30">
+                    <div class="input-hint">Drag to see growth over different time periods</div>
+                </div>
+
+                <div class="scenarios">
+                    <label style="color: var(--text-primary);">📋 Try a scenario</label>
+                    <div class="scenario-buttons">
+                        <button class="scenario-btn" data-scenario="student" style="background: #10b981; color: white; border: none;">🎓 Student</button>
+                        <button class="scenario-btn" data-scenario="professional" style="background: #3b82f6; color: white; border: none;">💼 Professional</button>
+                        <button class="scenario-btn" data-scenario="family" style="background: #f59e0b; color: white; border: none;">🏠 Family</button>
+                        <button class="scenario-btn" data-scenario="high_earner" style="background: #ef4444; color: white; border: none;">⚡ High Earner</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <div class="growth-rates" id="growth-rates"></div>
+
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>📈 Portfolio Growth Over Time</h3>
+                        <div class="chart-legend" id="chart-legend"></div>
+                    </div>
+                    <canvas id="growth-chart" style="height: 500px; width: 100%;"></canvas>
+                </div>
+
+                <div class="chart-insight" id="chart-insight">
+                    💡 Hover over the chart to see exact values at any year — watch how higher returns accelerate!
+                </div>
+
+                <div class="visual-timeline" style="margin-top: 1.5rem; background: var(--bg-elevated); border-radius: 16px; padding: 1.5rem;">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--accent); margin-bottom: 1rem;">⏱️ TIME TO REACH YOUR FREEDOM GOAL</div>
+                    <div id="timeline-visual" style="display: flex; flex-direction: column; gap: 1rem;"></div>
+                </div>
+
+                <div class="milestone-table">
+                    <h3>🎯 When You'll Hit Each Milestone</h3>
+                    <div id="milestone-table"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="educational-note">
+            <div class="note-icon">📊</div>
+            <div class="note-content">
+                <strong>What the lines show you:</strong>
+                Each colored line shows how your money grows with a different investment type.
+                <strong>The steeper the line, the faster your money grows.</strong>
+                Notice how higher-return investments (red/orange lines) start pulling away after 10-15 years — that's compound interest working!
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestEd • Investing Basics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">📈 InvestEd</a>
+            <div class="nav-links">
+                <a href="/basics" class="nav-link active">📚 Basics</a>
+                <a href="/calculator" class="nav-link">🧮 Calculator</a>
+                <a href="/compare" class="nav-link">⚖️ Compare</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="basics-main">
+        <div class="basics-header">
+            <h1>📚 Investing Basics</h1>
+            <p>Simple explanations. Play with the demos. See it happen.</p>
+        </div>
+
+        <div class="lessons-grid">
+            <!-- LESSON 1: What is Compound Interest? -->
+            <div class="lesson-card">
+                <div class="lesson-icon">✨</div>
+                <h2>What is Compound Interest?</h2>
+
+                <div class="simple-explanation">
+                    <strong>🤔 In plain English:</strong> Your money makes money. Then THAT money makes money. It's like a snowball rolling downhill - it gets bigger and bigger.
+                </div>
+
+                <div class="example-box">
+                    <div class="example-title">📖 Let me show you:</div>
+                    <p>Imagine you put <strong>$100</strong> in an account that gives you <strong>10%</strong> every year.</p>
+                    <ul>
+                        <li><strong>Year 1:</strong> You earn $10 → Total = <strong>$110</strong></li>
+                        <li><strong>Year 2:</strong> You earn $11 (10% of $110) → Total = <strong>$121</strong></li>
+                        <li><strong>Year 3:</strong> You earn $12 → Total = <strong>$133</strong></li>
+                    </ul>
+                    <p class="example-note">💡 See what happened? You earned MORE in Year 2 ($11) than Year 1 ($10) even though you didn't add any money. That's compound interest!</p>
+                </div>
+
+                <div class="interactive-demo" style="background: var(--bg-elevated); border-radius: 16px; padding: 1rem; margin: 1rem 0; border: 1px solid var(--border);">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">🎮 Try it yourself → Drag the sliders</div>
+                    <div class="demo-control">
+                        <label>💰 Your money: <strong>$<span id="demo-principal-val">100</span></strong></label>
+                        <input type="range" id="demo-principal" min="100" max="10000" step="100" value="100">
+                    </div>
+                    <div class="demo-control">
+                        <label>📈 Yearly return: <strong><span id="demo-rate-val">10</span>%</strong></label>
+                        <input type="range" id="demo-rate" min="1" max="15" step="0.5" value="10">
+                    </div>
+                    <div class="demo-control">
+                        <label>⏰ Years: <strong><span id="demo-years-val">3</span> years</strong></label>
+                        <input type="range" id="demo-years" min="1" max="30" step="1" value="3">
+                    </div>
+                    <div class="demo-result" style="background: var(--bg-dark); padding: 0.8rem; border-radius: 12px; margin: 0.8rem 0; text-align: center;">
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">After <span id="demo-years-display">3</span> years:</div>
+                        <div style="font-size: 1.6rem; font-weight: 700; color: var(--accent);" id="demo-result">$133.10</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">You put in: <strong id="demo-invested">$100</strong> | You earned: <strong id="demo-earned">$33.10</strong></div>
+                    </div>
+                    <div class="play-hint">
+                        ⬆️ Try changing the numbers! Watch how more years = more earnings!
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem; background: var(--bg-dark); border-radius: 12px; padding: 1rem;">
+                    <div style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.5rem;">📈 See how $100 grows over time:</div>
+                    <canvas id="compoundChart" style="height: 200px; width: 100%;"></canvas>
+                </div>
+            </div>
+
+            <!-- LESSON 2: Why Rate of Return Matters -->
+            <div class="lesson-card">
+                <div class="lesson-icon">📊</div>
+                <h2>Why Rate of Return Matters</h2>
+
+                <div class="simple-explanation">
+                    <strong>🎯 The short version:</strong> Rate of return = how fast your money grows. Higher rate = faster growth. But higher rate usually means more risk.
+                </div>
+
+                <div class="example-box">
+                    <div class="example-title">💰 Real example:</div>
+                    <p>Same $1,000 invested for 20 years:</p>
+                    <ul>
+                        <li>🏦 <strong>Savings Account (1%)</strong> → grows to <strong>$1,220</strong></li>
+                        <li>📜 <strong>Bonds (4%)</strong> → grows to <strong>$2,191</strong></li>
+                        <li>📊 <strong>Stocks (8%)</strong> → grows to <strong>$4,661</strong></li>
+                    </ul>
+                    <p class="example-note">💡 That's a <strong>$3,441 difference</strong> between savings and stocks - from the same $1,000!</p>
+                </div>
+
+                <div class="interactive-demo" style="background: var(--bg-elevated); border-radius: 16px; padding: 1rem; margin: 1rem 0;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">🎮 See the difference yourself</div>
+                    <div class="demo-control">
+                        <label>💰 Starting money: <strong>$<span id="rate-principal-val">1,000</span></strong></label>
+                        <input type="range" id="rate-principal" min="100" max="50000" step="500" value="1000">
+                    </div>
+                    <div class="demo-control">
+                        <label>⏰ Years: <strong><span id="rate-years-val">20</span> years</strong></label>
+                        <input type="range" id="rate-years" min="1" max="40" step="1" value="20">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 1rem;">
+                        <div style="background: var(--bg-dark); padding: 0.5rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 0.6rem; color: #94a3b8;">🏦 Savings (1%)</div>
+                            <div style="font-size: 1rem; font-weight: 700;" id="savings-result">$1,220</div>
+                        </div>
+                        <div style="background: var(--bg-dark); padding: 0.5rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 0.6rem; color: #fbbf24;">📜 Bonds (4%)</div>
+                            <div style="font-size: 1rem; font-weight: 700;" id="bonds-result">$2,191</div>
+                        </div>
+                        <div style="background: var(--bg-dark); padding: 0.5rem; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 0.6rem; color: #f43f5e;">⚡ Stocks (8%)</div>
+                            <div style="font-size: 1rem; font-weight: 700;" id="stocks-result">$4,661</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem; background: var(--bg-dark); border-radius: 12px; padding: 1rem;">
+                    <div style="font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.5rem;">⚡ The Rule of 72 (how fast your money doubles):</div>
+                    <div style="display: flex; gap: 0.5rem; align-items: end; height: 130px;">
+                        <div style="flex:1; text-align:center;"><div style="background: #60a5fa; height: 72px; border-radius: 6px; margin-bottom: 4px;"></div><span style="font-size:0.65rem;">1%<br>72 yrs</span></div>
+                        <div style="flex:1; text-align:center;"><div style="background: #34d399; height: 36px; border-radius: 6px; margin-bottom: 4px;"></div><span style="font-size:0.65rem;">2%<br>36 yrs</span></div>
+                        <div style="flex:1; text-align:center;"><div style="background: #fbbf24; height: 18px; border-radius: 6px; margin-bottom: 4px;"></div><span style="font-size:0.65rem;">4%<br>18 yrs</span></div>
+                        <div style="flex:1; text-align:center;"><div style="background: #f97316; height: 12px; border-radius: 6px; margin-bottom: 4px;"></div><span style="font-size:0.65rem;">6%<br>12 yrs</span></div>
+                        <div style="flex:1; text-align:center;"><div style="background: #f43f5e; height: 9px; border-radius: 6px; margin-bottom: 4px;"></div><span style="font-size:0.65rem;">8%<br>9 yrs</span></div>
+                    </div>
+                    <div class="play-hint" style="margin-top: 0.5rem;">💡 At 8%, your money doubles every 9 years. At 1%, it takes 72 years!</div>
+                </div>
+            </div>
+
+            <!-- LESSON 3: Risk vs Reward -->
+            <div class="lesson-card">
+                <div class="lesson-icon">⚖️</div>
+                <h2>Risk vs Reward</h2>
+
+                <div class="simple-explanation">
+                    <strong>⚠️ The trade-off:</strong> Want higher returns? You have to accept that your money might go DOWN some years. It's like a roller coaster - higher highs, but scarier drops.
+                </div>
+
+                <div class="example-box">
+                    <div class="example-title">📊 Real history (1926-2022):</div>
+                    <ul>
+                        <li>🟢 <strong>Savings accounts:</strong> Never lost money. But only grew ~3% per year.</li>
+                        <li>🔴 <strong>Stocks:</strong> Averaged ~10% per year. BUT had 14 years where they lost money (sometimes -30% or more!).</li>
+                    </ul>
+                    <p class="example-note">💡 The key question: <strong>When do you need the money?</strong> If you need it in 2 years → pick low risk. If you have 20+ years → higher risk can pay off.</p>
+                </div>
+
+                <div class="interactive-demo" style="background: var(--bg-elevated); border-radius: 16px; padding: 1rem; margin: 1rem 0;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">🎮 Pick your investment style:</div>
+                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                        <button id="safe-btn" style="flex:1; padding: 0.75rem; background: #10b981; border: none; border-radius: 8px; cursor: pointer; color: white; font-weight: 600; font-size: 0.9rem;">🛡️ Safe</button>
+                        <button id="medium-btn" style="flex:1; padding: 0.75rem; background: #f59e0b; border: none; border-radius: 8px; cursor: pointer; color: white; font-weight: 600; font-size: 0.9rem;">🟡 Medium</button>
+                        <button id="risky-btn" style="flex:1; padding: 0.75rem; background: #ef4444; border: none; border-radius: 8px; cursor: pointer; color: white; font-weight: 600; font-size: 0.9rem;">🔥 Risky</button>
+                    </div>
+                    <div id="risk-result" style="background: var(--bg-dark); padding: 1rem; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem;">📈 Average return over 30 years:</div>
+                        <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent);" id="risk-return">+9% per year</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.3rem;" id="risk-warning">Expect big drops (-30% to -50%) but also big gains!</div>
+                    </div>
+                </div>
+
+                <svg width="100%" height="100" viewBox="0 0 400 100" style="margin-top: 0.5rem;">
+                    <line x1="40" y1="80" x2="380" y2="80" stroke="#666" stroke-width="1"/>
+                    <line x1="40" y1="10" x2="40" y2="80" stroke="#666" stroke-width="1"/>
+                    <path d="M 40 70 L 100 65 L 160 55 L 220 40 L 280 25 L 340 15" stroke="url(#riskGrad)" stroke-width="3" fill="none"/>
+                    <defs><linearGradient id="riskGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="50%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f43f5e"/></linearGradient></defs>
+                    <text x="45" y="95" fill="#888" font-size="8">Low Risk</text>
+                    <text x="170" y="95" fill="#888" font-size="8">Medium Risk</text>
+                    <text x="330" y="95" fill="#888" font-size="8">High Risk</text>
+                    <text x="15" y="20" fill="#888" font-size="8">Return ↑</text>
+                </svg>
+            </div>
+
+            <!-- LESSON 4: Financial Freedom -->
+            <div class="lesson-card">
+                <div class="lesson-icon">🏁</div>
+                <h2>What is Financial Freedom?</h2>
+
+                <div class="simple-explanation">
+                    <strong>🏆 The goal:</strong> When your investments earn enough money each year to cover your living expenses. You don't NEED to work anymore.
+                </div>
+
+                <div class="example-box">
+                    <div class="example-title">🎯 Simple formula:</div>
+                    <p>Freedom Number = Yearly Spending ÷ Expected Return</p>
+                    <p>Example: You spend <strong>$50,000/year</strong> and expect <strong>5%</strong> returns:</p>
+                    <div style="font-size: 1.3rem; font-weight: 700; color: var(--accent); margin: 0.5rem 0;">$50,000 ÷ 0.05 = $1,000,000</div>
+                    <p>You need <strong>$1 million</strong> to never work again!</p>
+                </div>
+
+                <div class="interactive-demo" style="background: var(--bg-elevated); border-radius: 16px; padding: 1rem; margin: 1rem 0;">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">🎮 Calculate YOUR freedom number</div>
+                    <div class="demo-control">
+                        <label>💰 Your yearly spending: <strong>$<span id="spending-val">50,000</span></strong></label>
+                        <input type="range" id="spending" min="20000" max="150000" step="5000" value="50000">
+                    </div>
+                    <div class="demo-control">
+                        <label>📈 Expected return: <strong><span id="freedom-rate-val">5</span>%</strong></label>
+                        <input type="range" id="freedom-rate" min="3" max="10" step="0.5" value="5">
+                    </div>
+                    <div style="background: var(--bg-dark); padding: 0.8rem; border-radius: 12px; text-align: center; margin-top: 0.5rem;">
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">You need to save:</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent);" id="freedom-number">$1,000,000</div>
+                    </div>
+                </div>
+
+                <div class="milestones">
+                    <h4>🎯 Wealth milestones to aim for:</h4>
+                    <ul>
+                        <li><span>$100K</span> → First big win. Compounding starts working for you.</li>
+                        <li><span>$500K</span> → Your money grows faster than you can save.</li>
+                        <li><span>$1M</span> → Can generate $40K/year. Partial freedom!</li>
+                        <li><span>$2.5M</span> → Can generate $100K/year. Full freedom!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>Ready to see YOUR numbers?</h3>
+            <a href="/calculator" class="btn btn-primary">Go to Calculator →</a>
+        </div>
+    </main>
+</body>
+</html>

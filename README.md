@@ -2,7 +2,7 @@
 
 **InvestEd** is a beginner-friendly web application that teaches investing concepts through simple explanations and interactive visualizations. No jargon, no experience needed.
 
-🔗 **Live Demo:** [https://invested.yourusername.pythonanywhere.com](https://invested.yourusername.pythonanywhere.com)
+
 
 ---
 

@@ -72,15 +72,4 @@ python app.py
 
 # 4. Open your browser to http://localhost:5000
 ```
----
 
-## 🧪 The Math Behind the App
-
-The application uses the **Future Value of an Ordinary Annuity** formula to calculate growth with monthly contributions:
-
-$$FV = PV(1 + r)^n + PMT \left[ \frac{(1 + r)^n - 1}{r} \right]$$
-
-* **PV**: Starting Amount (Initial Principal)
-* **PMT**: Annual Contribution (Monthly Investment × 12)
-* **r**: Annual Interest Rate (Decimal)
-* **n**: Number of Years

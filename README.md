@@ -1,6 +1,6 @@
 # 📈 InvestEd - Learn to Invest
 
-**InvestEd** is a beginner-friendly web application built to demystify investing. It combines clear, jargon-free educational lessons with powerful interactive tools to help users visualize the impact of compound interest and plan their journey toward financial freedom.
+**InvestEd** is a beginner-friendly web application built to educate people about investment. It combines clear, jargon-free educational lessons with powerful interactive tools to help users visualize the impact of compound interest and plan their journey toward financial freedom.
 
 ---
 
